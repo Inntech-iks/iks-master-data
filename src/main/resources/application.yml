@@ -1,0 +1,22 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: master-data-service
+  datasource:
+    username: dunglt
+    password: dunglt@123
+    url: jdbc:postgresql://localhost:5432/iks-masterdata
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+      mode: always
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  config:
+    import:
+    - optional:configserver:http://localhost:8762   
